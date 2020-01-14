@@ -147,14 +147,8 @@
 #else
     if (self.imageView.image) {
 #endif
-        CGRect scrollViewFrame = self.bounds;
-        
-        CGFloat scaleWidth = scrollViewFrame.size.width / self.imageView.image.size.width;
-        CGFloat scaleHeight = scrollViewFrame.size.height / self.imageView.image.size.height;
-        CGFloat minScale = MIN(scaleWidth, scaleHeight);
-        
-        self.minimumZoomScale = minScale;
-        self.maximumZoomScale = MAX(minScale, self.maximumZoomScale);
+        self.minimumZoomScale = 1.7;
+        self.maximumZoomScale = 3.0;
         
         self.zoomScale = self.minimumZoomScale;
         
